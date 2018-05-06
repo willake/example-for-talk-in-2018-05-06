@@ -1,0 +1,22 @@
+嗨同學，
+
+如果你意外翻到了這個資料夾，
+
+正在煩惱 GameObjectPositionVariable 裡繼承的 ScriptableObject 是什麼東西，
+
+請不用擔心，對還沒學過或剛開始接觸 Unity 的人來說可能有點難理解，
+
+建議可以在學習過 Unity 的基礎後再來回顧，
+
+如果想知道 ScriptableObject 是什麼的話，
+
+可以看以下兩個影片，也可以去查查中文的資料
+
+然後盡量少看中文的資料，很多都過時了。
+
+Unite Austin 2017 - Game Architecture with Scriptable Objects
+https://youtu.be/raQ3iHhE_Kk
+
+
+Brackeys - SCRIPTABLE OBJECTS in Unity
+https://youtu.be/aPXvoWVabPY
