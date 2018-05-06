@@ -7,3 +7,9 @@ There's four scene in the example:
 -  CameraFollow
 -  CameraParallax
 -  SwitchTimeChannel
+
+
+The assets in example is made by Jesse M / Twitter - @Jsf23Art
+
+url:
+https://jesse-m.itch.io/jungle-pack
