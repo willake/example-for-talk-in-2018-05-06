@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PleyerMovement : MonoBehaviour 
 {
-
+	// Player Rigibody reference
 	Rigidbody2D playerRig;
 
 	[HeaderAttribute("Player Status")]
@@ -32,19 +32,23 @@ public class PleyerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		// If player click A or D button on keyboard
 		if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D))
 		{
 			Move();
 		}
-
-		Debug.Log("Vector2: " + GroundVectorCast());
 	}
 
 	void Move()
 	{
+		// InputX is work with Unity, if player push A or D button on your keyboard it will change,   A = 0   D = -1
 		float inputX = Input.GetAxis("Horizontal");
+
+		// Player facing direction, flipX is the direction of the picture
 		facingRight = inputX>0?true:false;
 		GetComponent<SpriteRenderer>().flipX = facingRight?false:true;
+
+		// Init vector
 		Vector2 moveVector = Vector2.zero;
 
 		switch(playerMovementType)
@@ -65,7 +69,10 @@ public class PleyerMovement : MonoBehaviour
 				}
 				break;
 		}
+
 		playerRig.velocity = moveVector;
+
+		// You may need to know about Debug.Log
 		Debug.Log(inputX);
 	}
 

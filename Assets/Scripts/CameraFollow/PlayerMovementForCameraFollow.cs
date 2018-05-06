@@ -5,7 +5,10 @@ using UnityEngine;
 public class PlayerMovementForCameraFollow : MonoBehaviour 
 {
 
+	// Player Rigibody reference
 	Rigidbody2D playerRig;
+
+	// Speed for player movement
 	public float MoveSpeed;
 
 	[HeaderAttribute("Player Status")]
@@ -17,6 +20,7 @@ public class PlayerMovementForCameraFollow : MonoBehaviour
 	public float castOffset;
 	public float castDistance;
 
+	// Player Position Reference
 	public GameObjectPositionVariable playerPosition;
 
 	void Start()
@@ -27,21 +31,29 @@ public class PlayerMovementForCameraFollow : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+		// If player click A or D
 		if(Input.GetKey(KeyCode.A)||Input.GetKey(KeyCode.D))
 		{
 			Move();
 		}
 
+
+		// Save position to player position assets, you don't really need to know about it
 		SetPositionToAssets();
 	}
 
 	void Move()
 	{
+		// InputX is work with Unity, if player push A or D button on your keyboard it will change,   A = 0   D = -1
 		float inputX = Input.GetAxis("Horizontal");
+
+		// Player facing direction, flipX is the direction of the picture
 		facingRight = inputX>0?true:false;
 		GetComponent<SpriteRenderer>().flipX = facingRight?false:true;
-		Vector2 moveVector = Vector2.zero;
 
+		// Init vector
+		Vector2 moveVector = Vector2.zero;
+		
 		moveVector = GroundVectorCast();
 		moveVector.x *= inputX * MoveSpeed;
 		moveVector.y *= (movingUp? 1 : -1) * MoveSpeed;
@@ -51,6 +63,8 @@ public class PlayerMovementForCameraFollow : MonoBehaviour
 		}
 
 		playerRig.velocity = moveVector;
+
+		// You may need to know about Debug.Log
 		Debug.Log(inputX);
 	}
 
