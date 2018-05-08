@@ -41,7 +41,7 @@ public class PleyerMovement : MonoBehaviour
 
 	void Move()
 	{
-		// InputX is work with Unity, if player push A or D button on your keyboard it will change,   A = 0   D = -1
+		// InputX is work with Unity, if player push A or D button on your keyboard it will change,   A = -1   D = 1
 		float inputX = Input.GetAxis("Horizontal");
 
 		// Player facing direction, flipX is the direction of the picture
